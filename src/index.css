@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
+  --col-white: #fff;
+  --col-accent: #911a77;
+  --col-accent-light: #b91d822e;
+  --col-green: #1db954;
+  --header-heigth: 100px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

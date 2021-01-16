@@ -1,0 +1,29 @@
+.header {
+  background-color: var(--col-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-heigth);
+  padding: 0 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &Img {
+    width: 60px;
+  }
+
+  &Title {
+    margin-left: 0.25em;
+    font-size: 2rem;
+    color: var(--col-white);
+  }
+}
+
+.nav {
+  display: grid;
+  place-items: center;
+}

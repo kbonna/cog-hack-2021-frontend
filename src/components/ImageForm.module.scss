@@ -1,0 +1,85 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+.load {
+  border: 1px dashed var(--col-accent);
+  background-color: var(--col-accent-light);
+  border-radius: 5px;
+  height: 200px;
+
+  display: grid;
+  place-items: center;
+  margin-bottom: 1em;
+}
+
+.label {
+  display: block;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.25em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.instructions {
+  font-size: 0.8em;
+}
+.instructionsShort {
+  font-size: 0.8em;
+}
+
+.uploadSvg {
+  width: 45px;
+}
+.uploadPath {
+  fill: var(--col-accent);
+}
+
+.input {
+  display: none;
+}
+
+.button {
+  background-color: var(--col-accent);
+  border: none;
+  color: var(--col-white);
+  border-radius: 3px;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+.select {
+  &Title {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  &List {
+    margin: 0;
+    list-style-type: none;
+    margin-bottom: 2rem;
+  }
+
+  &Item {
+    position: relative;
+  }
+
+  &Item::before {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: rgba(0, 0, 0, 0.3);
+    content: "";
+    left: -30px;
+    top: 8px;
+    border-radius: 100vh;
+  }
+
+  &ItemSelected::before {
+    background-color: var(--col-accent);
+  }
+}

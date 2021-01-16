@@ -1,0 +1,29 @@
+.recommendationWrapper {
+  width: 85%;
+  padding: 0 1.5rem;
+}
+
+.ready {
+  text-align: center;
+}
+
+.linkWrapper {
+  display: grid;
+  place-items: center;
+}
+
+.link {
+  background-color: var(--col-green);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 100vh;
+  margin: auto;
+  display: block;
+  text-transform: uppercase;
+  color: var(--col-white);
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}

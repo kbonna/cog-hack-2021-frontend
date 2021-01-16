@@ -1,0 +1,42 @@
+.spotifyButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem 8rem 1.5rem;
+}
+
+.appContentWrapper {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - var(--header-heigth));
+  width: 100%;
+}
+
+.svgClassName {
+  width: 40px;
+}
+
+.pathClassName {
+  fill: white;
+  stroke: white;
+  stroke-width: 15px;
+}
+
+.logout {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.subtitle {
+  text-align: center;
+  width: 100%;
+}
