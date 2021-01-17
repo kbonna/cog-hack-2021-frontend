@@ -29,6 +29,7 @@ const MOODS = new Set([
 
 function App() {
   const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const [emotions, setEmotions] = useState(null);
   const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
   const [playlists, setPlaylists] = useState([]);
@@ -36,6 +37,7 @@ function App() {
   const fetchPlaylists = () => {
     setEmotions(null);
     if (token !== "") {
+      setToken(Cookies.get("spotifyAuthToken"));
       axios
         .get(`${SPOTIFY_API_URL}/users/${USERNAME}/playlists`, {
           headers: {
@@ -87,6 +89,12 @@ function App() {
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
+    setImageUrl(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const handleRemoveImage = (e) => {
+    setImage(null);
+    setImageUrl("");
   };
 
   let appContent;
@@ -94,8 +102,10 @@ function App() {
     appContent = (
       <ImageForm
         image={image}
+        imageUrl={imageUrl}
         handleSubmit={handleSubmit}
         handleImageChange={handleImageChange}
+        handleRemoveImage={handleRemoveImage}
       ></ImageForm>
     );
   } else if (emotions === "loading") {
@@ -129,11 +139,11 @@ function App() {
         <div className={styles.appContentWrapper}>
           <div className={styles.spotifyButtonWrapper}>
             <p className={styles.title}>
-              Hello! Not sure what you are looking for today's mood?
+              Hello! Not sure what you are looking for for today's mood?
             </p>
             <p className={styles.subtitle}>Let's find something to help you!</p>
             <SpotifyAuth
-              redirectUri={`${APP_URL}/app/`}
+              redirectUri={APP_URL + "/"}
               clientID={CLIENT_ID}
               scopes={[Scopes.userReadPrivate, "user-read-email"]}
             />

@@ -2,7 +2,13 @@ import React from "react";
 import styles from "./ImageForm.module.scss";
 import Upload from "../icons/Upload";
 
-const ImageForm = ({ handleSubmit, handleImageChange, image }) => {
+const ImageForm = ({
+  handleSubmit,
+  handleImageChange,
+  handleRemoveImage,
+  image,
+  imageUrl,
+}) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <h2 className={styles.title}>Show us your current emotions</h2>
@@ -13,12 +19,21 @@ const ImageForm = ({ handleSubmit, handleImageChange, image }) => {
       <p className={styles.instructionsShort}>Upload your front face photo</p>
       <div className={styles.load}>
         <div className={styles.loadContent}>
-          <label htmlFor="image">
-            <Upload
-              svgClassName={styles.uploadSvg}
-              pathClassName={styles.uploadPath}
-            ></Upload>
-          </label>
+          {image ? (
+            <>
+              <img className={styles.image} src={imageUrl} />
+              <button className={styles.closeBtn} onClick={handleRemoveImage}>
+                ×
+              </button>
+            </>
+          ) : (
+            <label className={styles.uploadBtn} htmlFor="image">
+              <Upload
+                svgClassName={styles.uploadSvg}
+                pathClassName={styles.uploadPath}
+              ></Upload>
+            </label>
+          )}
           <input
             className={styles.input}
             id="image"
